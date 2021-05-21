@@ -1,7 +1,8 @@
 
+
 exports.up = function(knex) {
-    return knex.schema.createTable("pizzas", col => {
-        col.increments('pizza_id');
+    return knex.schema.createTable("sides", col => {
+        col.increments('side_id');
         
         col.varchar('name', 255)
         .notNullable();
@@ -22,9 +23,8 @@ exports.up = function(knex) {
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
     });
-   
 };
 
 exports.down = function(knex) {
-   return knex.schema.dropTableIfExists('pizzas')
+   return knex.schema.dropTableIfExists('sides')
 };

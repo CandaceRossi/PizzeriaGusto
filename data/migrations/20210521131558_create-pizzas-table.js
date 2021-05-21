@@ -1,7 +1,8 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable("toppingTypes", col => {
-        col.increments('topping_type_code');
+    return knex.schema.createTable("pizzas", col => {
+        col.increments('pizza_id');
+        
         col.varchar('name', 255)
         .notNullable();
         col.varchar('description', 255)
@@ -13,16 +14,18 @@ exports.up = function(knex) {
         col.decimal("cost");
         col.varchar('comments', 255)
         .notNullable();
-        col.integer('topping_id')
+        
+        col.integer('product_id')
         .unsigned()
         .notNullable()
-        .references('topping_id')
-        .inTable('toppings')
+        .references('product_id')
+        .inTable('products')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
     });
+   
 };
 
 exports.down = function(knex) {
-   return knex.schema.dropTableIfExists('toppingTypes')
+   return knex.schema.dropTableIfExists('pizzas')
 };

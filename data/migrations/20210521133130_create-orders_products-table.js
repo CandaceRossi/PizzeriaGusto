@@ -1,9 +1,9 @@
 
 exports.up = function(knex) {
    return knex.schema.createTable('orders_products', col => {
-
-        col.varchar('quantity', 255)
-        col.varchar('comments', 500);
+       
+        // col.varchar('quantity', 255)
+        // col.varchar('comments', 500);
         col.integer('order_id')
         .unsigned()
         .notNullable()

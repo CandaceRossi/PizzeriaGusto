@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable("issues", col => {
+    return knex.schema.createTable("customerPhones", col => {
         col.increments("customerPhones_id");
         col.varchar('area_code', 255)
         .notNullable();

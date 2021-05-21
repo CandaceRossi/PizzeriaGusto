@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable("sides", col => {
-        col.increments('side_id');
+    return knex.schema.createTable("products", col => {
+        col.increments('product_id');
         
         col.varchar('name', 255)
         .notNullable();
@@ -11,19 +11,18 @@ exports.up = function(knex) {
         .notNullable();
         col.varchar('units', 255)
         .notNullable();
-        col.decimal("cost");
         col.varchar('comments', 255)
         .notNullable();
-        col.integer('product_id')
+        col.integer('order_id')
         .unsigned()
         .notNullable()
-        .references('product_id')
-        .inTable('products')
+        .references('order_id')
+        .inTable('orders')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
     });
 };
 
 exports.down = function(knex) {
-   return knex.schema.dropTableIfExists('sides')
+   return knex.schema.dropTableIfExists('products')
 };
