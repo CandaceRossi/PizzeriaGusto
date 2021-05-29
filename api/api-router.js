@@ -2,8 +2,8 @@ const router = require("express").Router();
 const authRouter = require("../auth/auth-router");
 const usersRouter = require("../users/users-router");
 const customersRouter = require("../customers/customers-router");
-const usersCustomersRouter = require("../users_customers/users-customers-router");
-const customerPhonesRouter = require("../customer-phones/customer-phones-router");
+const usersCustomersRouter = require("../users-customers/users-customers-router");
+const customerPhonesRouter = require("../customerPhones/customerPhones-router");
 const ordersRouter = require("../orders/orders-router");
 const ordersProductsRouter = require("../orders-products/orders-products-router");
 const productsRouter = require("../products/products-router");
@@ -11,7 +11,7 @@ const pizzasRouter = require("../pizzas/pizzas-router");
 const beveragesRouter = require("../beverages/beverages-router");
 const sidesRouter = require("../sides/sides-router");
 const toppingsRouter = require("../toppings/toppings-router");
-const toppingTypesRouter = require("../topping-types/topping-types-router");
+const toppingTypesRouter = require("../toppingTypes/toppingTypes-router");
 
 
 router.use("/auth", authRouter);

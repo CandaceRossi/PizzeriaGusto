@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Pizzas = require("../pizzas/pizzas-model");
+const Pizzas = require("./pizzas-model");
 const restricted = require("../auth/restricted-middleware");
 
 router.get("/", (req, res) => {
