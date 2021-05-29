@@ -63,11 +63,11 @@ router.get("/users/:id", (req, res) => {
     });
 });
 
-// endpoint: api/users-schools/connect-user
+// endpoint: api/users-customers/connect-user
 router.post("/connect-user", restricted, (req, res) => {
   const { users_id, customers_id } = req.body;
-  const board = req.decodedJwt.board;
-  if (!board) {
+  const executive = req.decodedJwt.executive;
+  if (!executive) {
     Users.findById(users_id).then(user => {
       if (!user) {
         res
